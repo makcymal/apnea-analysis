@@ -143,7 +143,7 @@ class ApnoeModel:
 
         arch = [self.X.shape[1]] + inner_arch + [1]
 
-        model = keras.Sequential(
+        self.model = keras.Sequential(
             [layers.Input([arch[0]])]
             + [
                 layers.Dense(units=arch[i], activation=activ)
@@ -151,14 +151,18 @@ class ApnoeModel:
             ]
             + [layers.Dense(units=arch[-1], activation=out_activ)]
         )
-        model.compile(
-            loss=loss, optimizer=optim, metrics=["recall"]
-        )
-        model.fit(
+        self.model.compile(loss=loss, optimizer=optim, metrics=["recall"])
+        self.model.fit(
             self.X,
             self.y,
             epochs=epochs,
             batch_size=batch_size,
             verbose=0,
         )
-        model.save(f"apnoe_model.keras")     
+        self.model.save(f"apnoe_model.keras")
+
+    def predict(self, pat) -> float:
+        return round(
+            self.model.predict(self.X.iloc[pat // 2].to_numpy().reshape((1, 13)))[0, 0],
+            2,
+        )
