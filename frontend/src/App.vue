@@ -1,14 +1,12 @@
 <template>
+<div>
 <header>
-  <p>Пациент</p>
-  <p>Период</p>
+
 </header>
 <body>
   <div class="container">
     <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Действие
-  </button>
+
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Действие</a></li>
     <li><a class="dropdown-item" href="#">Другое действие</a></li>
@@ -20,7 +18,7 @@
 <div class="container">
     <div class="row align-items-start">
     <div class="col">
-      <brain-map />
+      <brain-map  />
     </div>
     <div class="col">
       <patient-info />
@@ -29,6 +27,8 @@
   </div>
 </div>
 </body>
+</div>
+
 </template>
 
 <script setup >
