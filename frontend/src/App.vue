@@ -27,6 +27,17 @@
   </div>
 </div>
 </body>
+<div class="graphs" >
+<div class="graph">
+<monitor-chart> </monitor-chart>
+
+</div>
+<div class="graph">
+<scatter-chart> </scatter-chart>
+
+</div>
+</div>
+
 </div>
 
 </template>
@@ -35,15 +46,25 @@
 import { ref , createApp} from "vue";
 import BrainMap from './components/BrainMap'
 import PatientInfo from './components/PatientInfo'
+import MonitorChart from './components/MonitorChart'
+import ScatterChart from './components/ScatterChart'
+
 const app = createApp({})
 
 // Регистрация компонента
-app.component('brain-map', BrainMap)
+app.component('brain-map', BrainMap, MonitorChart, ScatterChart)
 
 </script>
 
 
 <style lang="scss">
+.graphs {
+  display: flex;
+  justify-content: space-around;
+}
+.graph {
+  max-width: 600px;
+}
 html,
 body {
   height: 100%;
