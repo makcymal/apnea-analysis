@@ -1,0 +1,5 @@
+*/dataset
+*/precision_models
+*.keras
+*.csv
+/.vscode
