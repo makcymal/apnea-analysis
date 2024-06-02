@@ -149,7 +149,7 @@ body {
   align-items: center;
   flex-direction: column;
   // height: 500px;
-  width: 500px;
+  // width: 200px;
 }
 .brain-map {
   display: flex;
@@ -157,8 +157,8 @@ body {
   justify-content: center;
   border: 1px #006eff solid;
   border-radius: 50%;
-  height: 600px;
-  width: 600px;
+  height: 300px;
+  width: 300px;
 }
 .brain-zone {
   cursor: pointer;

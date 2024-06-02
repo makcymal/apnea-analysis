@@ -31,7 +31,10 @@
 <div class="container">
     <div class="row align-items-start">
     <div class="col">
+      <div class="div" >
       <brain-map  />
+      </div>
+
     </div>
     <div class="col">
       <patient-info />
@@ -75,6 +78,11 @@ app.component('brain-map', BrainMap, MonitorChart, ScatterChart)
 
 
 <style lang="scss">
+
+.div {
+  transform: scale(0.7);
+}
+
 .btn {
   width: 100%;
   display: flex;
