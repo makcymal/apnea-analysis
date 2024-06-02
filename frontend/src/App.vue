@@ -1,14 +1,25 @@
 <template>
+<div>
 <header>
-  <p>Пациент</p>
-  <p>Период</p>
+<select name="select">
+
+  <option value="value1" selected>Иванов Иван Иванович</option>
+  <option value="value2" >Годунов Иван Иванович</option>
+  <option value="value3">Петров Иван Иванович</option>
+</select>
+<select name="select">
+
+  <option value="value1" selected>Эксперимент 1</option>
+  <option value="value2" >Эксперимент 2</option>
+  <option value="value3">Эксперимент 3</option>
+</select>
+
+
 </header>
 <body>
   <div class="container">
     <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Действие
-  </button>
+
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Действие</a></li>
     <li><a class="dropdown-item" href="#">Другое действие</a></li>
@@ -20,30 +31,74 @@
 <div class="container">
     <div class="row align-items-start">
     <div class="col">
-      <brain-map />
+      <div class="div" >
+      <brain-map  />
+      </div>
+
     </div>
     <div class="col">
       <patient-info />
     </div>
     </div>
+
   </div>
 </div>
 </body>
+<div class="btn" >
+      <button class="create" >Сгенерировать</button>
+
+</div>
+<!-- <div class="graphs" >
+<div class="graph">
+<monitor-chart> </monitor-chart>
+
+</div>
+<div class="graph">
+<scatter-chart> </scatter-chart>
+
+</div>
+</div> -->
+
+</div>
+
 </template>
 
 <script setup >
 import { ref , createApp} from "vue";
 import BrainMap from './components/BrainMap'
 import PatientInfo from './components/PatientInfo'
+import MonitorChart from './components/MonitorChart'
+import ScatterChart from './components/ScatterChart'
+
 const app = createApp({})
 
 // Регистрация компонента
-app.component('brain-map', BrainMap)
+app.component('brain-map', BrainMap, MonitorChart, ScatterChart)
 
 </script>
 
 
 <style lang="scss">
+
+.div {
+  transform: scale(0.7);
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.create {
+
+}
+.graphs {
+  display: flex;
+  justify-content: space-around;
+}
+.graph {
+  max-width: 600px;
+}
 html,
 body {
   height: 100%;
@@ -52,9 +107,16 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
 header {
   display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
 }
+select {
+  border-radius: 10px;
+}
+
 .wrapper {
 
   display: flex;
@@ -62,6 +124,13 @@ header {
   flex-direction: column;
     // height: 500px;
   width: 500px;
+}
+.create {
+  transition: 0.3s;
+}
+.create:hover {
+  transform: translateY(-4px);
+
 }
 .brain-map {
 
@@ -74,23 +143,23 @@ header {
   height: 600px;
   width: 600px;
 }
-.brain-zone {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-justify-content: center;
-  width: 35px;
-  height: 35px;
-  margin: 25% 10%;
-    border: 1px #006eff solid;
-  border-radius: 50%;
-  transition: 0.3s;
-}
+// .brain-zone {
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+// justify-content: center;
+//   width: 35px;
+//   height: 35px;
+//   margin: 25% 10%;
+//     border: 1px #006eff solid;
+//   border-radius: 50%;
+//   transition: 0.3s;
+// }
 .brain-zone:hover {
   transform: translateY(-3px)
 }
 
-button {
+.button-zone {
     width: 35px;
   height: 35px;
     cursor: pointer;
