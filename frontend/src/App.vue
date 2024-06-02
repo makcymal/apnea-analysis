@@ -40,6 +40,7 @@
       <patient-info />
     </div>
     </div>
+
   </div>
 </div>
 </body>

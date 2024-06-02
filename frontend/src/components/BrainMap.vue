@@ -152,6 +152,13 @@ body {
   // width: 200px;
 }
 .brain-map {
+  background-image: url(@/images/brain.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
