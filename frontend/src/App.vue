@@ -1,6 +1,19 @@
 <template>
 <div>
 <header>
+<select name="select">
+
+  <option value="value1" selected>Иванов Иван Иванович</option>
+  <option value="value2" >Годунов Иван Иванович</option>
+  <option value="value3">Петров Иван Иванович</option>
+</select>
+<select name="select">
+
+  <option value="value1" selected>Эксперимент 1</option>
+  <option value="value2" >Эксперимент 2</option>
+  <option value="value3">Эксперимент 3</option>
+</select>
+
 
 </header>
 <body>
@@ -27,7 +40,11 @@
   </div>
 </div>
 </body>
-<div class="graphs" >
+<div class="btn" >
+      <button class="create" >Сгенерировать</button>
+
+</div>
+<!-- <div class="graphs" >
 <div class="graph">
 <monitor-chart> </monitor-chart>
 
@@ -36,7 +53,7 @@
 <scatter-chart> </scatter-chart>
 
 </div>
-</div>
+</div> -->
 
 </div>
 
@@ -58,6 +75,14 @@ app.component('brain-map', BrainMap, MonitorChart, ScatterChart)
 
 
 <style lang="scss">
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.create {
+
+}
 .graphs {
   display: flex;
   justify-content: space-around;
@@ -73,9 +98,16 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
 header {
   display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
 }
+select {
+  border-radius: 10px;
+}
+
 .wrapper {
 
   display: flex;
@@ -83,6 +115,13 @@ header {
   flex-direction: column;
     // height: 500px;
   width: 500px;
+}
+.create {
+  transition: 0.3s;
+}
+.create:hover {
+  transform: translateY(-4px);
+
 }
 .brain-map {
 
@@ -95,23 +134,23 @@ header {
   height: 600px;
   width: 600px;
 }
-.brain-zone {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-justify-content: center;
-  width: 35px;
-  height: 35px;
-  margin: 25% 10%;
-    border: 1px #006eff solid;
-  border-radius: 50%;
-  transition: 0.3s;
-}
+// .brain-zone {
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+// justify-content: center;
+//   width: 35px;
+//   height: 35px;
+//   margin: 25% 10%;
+//     border: 1px #006eff solid;
+//   border-radius: 50%;
+//   transition: 0.3s;
+// }
 .brain-zone:hover {
   transform: translateY(-3px)
 }
 
-button {
+.button-zone {
     width: 35px;
   height: 35px;
     cursor: pointer;
